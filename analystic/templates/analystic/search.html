@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Search Data{% endblock title %}
+
+
+{% block content %}
+
+<div class="container pt-5">
+    <div class="row">
+      <div class="col-sm">
+        
+      </div>
+      <div class="col">
+        <div class="card border-info bg-light mb-3" style="width: 25rem;">
+            <form method='GET'>
+                {% csrf_token %}
+            
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="date" name="date" placeholder="select zero date">
+                    <input class="form-control mr-sm-2" type="number" name="days" placeholder="How many days??">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </form>
+        </div>
+      </div>
+      <div class="col-sm">
+        {% for r in resu %}
+          <h3>In date {{ r.newDate }}</h3>
+          <h3>The infected are {{ r.Nd }}</h3>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

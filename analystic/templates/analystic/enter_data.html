@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Enter Data{% endblock title %}
+
+
+{% block content %}
+
+<div class="container pt-5">
+    <div class="row">
+      <div class="col-sm">
+        
+      </div>
+      <div class="col">
+        <div class="card border-info bg-light mb-3" style="width: 25rem;">
+            <form method='POST'>
+                {% csrf_token %}
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Number Of Infected People</span>
+                    {{ form.infected }}
+                    {% comment %}
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    {% endcomment %}
+                </div>
+            
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Data Date</span>
+                    {{ form.infectedDate }}
+                    {% comment %}
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    {% endcomment %}
+                </div>
+                <input type="submit" value="ADDED" class="btn btn-success mt-1">
+            </form>
+        </div>
+      </div>
+      <div class="col-sm">
+        
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

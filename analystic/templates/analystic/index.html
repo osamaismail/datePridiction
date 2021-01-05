@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Home{% endblock title %}
+
+
+
+{% block content %}
+
+{% block message %}
+{% endblock message %}
+<div class="container pt-5">
+    {{ data | safe }}
+</div>
+{% endblock content %}
